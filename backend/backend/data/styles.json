@@ -1,0 +1,26 @@
+{
+  "auto": {
+    "key": "auto",
+    "name": "自动匹配",
+    "description": "根据关系与性格自动选择更合适的贺卡风格。",
+    "prompt_suffix": "整体画面风格与祝福语内容和人物气质自然贴合，色彩和氛围不过度夸张。"
+  },
+  "guofeng": {
+    "key": "guofeng",
+    "name": "国风新年",
+    "description": "适合长辈、上级等正式场景，主色为红金，古典又高级。",
+    "prompt_suffix": "国风春节插画风格，红金主色，高级雅致，中国传统纹样，如祥云、回纹、团花，整体庄重不花哨。"
+  },
+  "cyberpunk": {
+    "key": "cyberpunk",
+    "name": "赛博酷炫",
+    "description": "适合朋友、同事、年轻人，带一点未来感与霓虹色彩。",
+    "prompt_suffix": "赛博朋克城市夜景，新年氛围，霓虹灯与电子屏交织，酷炫但保持画面干净，人物形象有活力。"
+  },
+  "handwritten": {
+    "key": "handwritten",
+    "name": "手写明信片",
+    "description": "温柔、亲密一点的手写卡片感觉。",
+    "prompt_suffix": "温柔的手写风新年贺卡，纸张质感明显，文字像钢笔或签字笔书写，画面安静、有生活气息。"
+  }
+}

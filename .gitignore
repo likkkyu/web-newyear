@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# 环境与密钥（勿提交）
+.env
+.env.local
+*.pem
+
+# Node / 前端
+node_modules/
+newyear-card/newyear-card/node_modules/
+*.log
+npm-debug.log*
+.pnpm-debug.log*
+newyear-card/newyear-card/dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# 后端运行时生成
+backend/backend/static/
+*.sqlite3
+
+# 可选：若不想提交马纹素材可取消下一行注释
+# newyear-card/newyear-card/public/horse-pattern.jpg

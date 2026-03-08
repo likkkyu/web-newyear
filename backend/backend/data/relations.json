@@ -1,0 +1,38 @@
+{
+  "primary_options": [
+    {
+      "key": "family",
+      "label": "亲戚",
+      "sub_options": [
+        { "key": "elder", "label": "长辈" },
+        { "key": "peer", "label": "平辈" },
+        { "key": "younger", "label": "晚辈" }
+      ]
+    },
+    {
+      "key": "friend",
+      "label": "朋友",
+      "sub_options": [
+        { "key": "normal", "label": "普通朋友" },
+        { "key": "close", "label": "密友" }
+      ]
+    },
+    {
+      "key": "coworker",
+      "label": "同事",
+      "sub_options": [
+        { "key": "leader", "label": "领导" },
+        { "key": "peer", "label": "同级同事" },
+        { "key": "subordinate", "label": "下级" }
+      ]
+    },
+    {
+      "key": "teacher_student",
+      "label": "师生",
+      "sub_options": [
+        { "key": "teacher", "label": "老师" },
+        { "key": "student", "label": "学生" }
+      ]
+    }
+  ]
+}
