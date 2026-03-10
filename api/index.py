@@ -1,10 +1,8 @@
 import sys
 import os
 from mangum import Mangum
-
-# 这里的关键：让 Python 能够跨文件夹找到你的 main.py
-# 路径必须对应 GitHub 上的 backend/backend/main.py
+# 确保路径指向你真正的 FastAPI 入口
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from backend.backend.main import app
+from backend.backend.main import app 
 
-handler = Mangum(app)
+handler = Mangum(app) # 这一行是 Vercel 运行 Python 后端的生命线
