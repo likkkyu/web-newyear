@@ -219,7 +219,7 @@ async def add_user(name: str, email: str) -> Dict[str, Any]:
 # --------------------------- 业务接口：原子能力 ---------------------------
 
 
-@app.post("/api/upload-image")
+@app.post("/upload-image")
 async def upload_image(file: UploadFile = File(...)) -> Dict[str, Any]:
     """接收文件并保存到本地 static，返回可公开访问的 URL。"""
 
@@ -227,12 +227,12 @@ async def upload_image(file: UploadFile = File(...)) -> Dict[str, Any]:
     return {"url": url}
 
 
-@app.post("/api/parse-relation")
+@app.post("/parse-relation")
 async def parse_relation(payload: ParseRelationRequest) -> Dict[str, Any]:
     """将前端选项组合为结构化关系。
 
     无密钥时走本地规则解析，有密钥时仍由同一个 Provider 负责，方便后续接入 LLM。
-    """
+    """  
 
     relation_info = llm_provider.parse_relation(
         payload.primary_relation,
@@ -243,13 +243,13 @@ async def parse_relation(payload: ParseRelationRequest) -> Dict[str, Any]:
     return {"relation": relation_info}
 
 
-@app.post("/api/analyze-image")
+@app.post("/analyze-image")
 async def analyze_image(payload: AnalyzeImageRequest) -> Dict[str, Any]:
     description = vision_provider.analyze_image(payload.image_url)
     return {"description": description}
 
 
-@app.post("/api/generate-blessing")
+@app.post("/generate-blessing")
 async def generate_blessing(payload: GenerateBlessingRequest) -> Dict[str, Any]:
     text = llm_provider.generate_blessing(
         payload.relation,
@@ -259,7 +259,7 @@ async def generate_blessing(payload: GenerateBlessingRequest) -> Dict[str, Any]:
     return {"blessingText": text}
 
 
-@app.post("/api/regenerate-blessings")
+@app.post("/regenerate-blessings")
 async def regenerate_blessings(payload: RegenerateBlessingsRequest) -> Dict[str, Any]:
     """PRD 4.5：重新生成三条祝福语（文言/文艺/大白话），不重新解析图片。"""
     tags = payload.personality_tags or []
@@ -271,7 +271,7 @@ async def regenerate_blessings(payload: RegenerateBlessingsRequest) -> Dict[str,
     return {"blessingOptions": options}
 
 
-@app.post("/api/generate-prompt")
+@app.post("/generate-prompt")
 async def generate_prompt(payload: GeneratePromptRequest) -> Dict[str, Any]:
     style_key = payload.style_key or "auto"
     prompt = llm_provider.generate_prompt(
@@ -292,7 +292,7 @@ DEFAULT_BLESSING_OPTIONS = [
 ]
 
 
-@app.post("/api/generate-card")
+@app.post("/generate-card")
 async def generate_card(payload: GenerateCardRequest) -> Dict[str, Any]:
     style_key = payload.style_key or "auto"
     if payload.prompt:
@@ -340,7 +340,7 @@ async def generate_card(payload: GenerateCardRequest) -> Dict[str, Any]:
 # --------------------------- 业务接口：一键生成 ---------------------------
 
 
-@app.post("/api/generate")
+@app.post("/generate")
 async def generate(
     primary_relation: Optional[str] = Form(None),
     secondary_relation: Optional[str] = Form(None),
