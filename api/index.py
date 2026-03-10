@@ -1,4 +1,9 @@
-# api/index.py
-from backend.backend.main import app  # 复用你现有的 FastAPI app
+import sys
+import os
 
-# Vercel 的 Python Runtime 会自动识别模块里的 `app` 作为入口（ASGI）
+# 将 backend 目录加入路径，确保能找到你的 main.py
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from backend.backend.main import app
+
+# Vercel 需要识别这个 app 对象
