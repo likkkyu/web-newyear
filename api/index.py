@@ -1,9 +1,11 @@
 import sys
 import os
+from mangum import Mangum
 
-# 将 backend 目录加入路径，确保能找到你的 main.py
+# 确保能找到 backend 文件夹
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from backend.backend.main import app
 
-# Vercel 需要识别这个 app 对象
+# 必须通过 Mangum 包装 FastAPI 实例
+handler = Mangum(app)
