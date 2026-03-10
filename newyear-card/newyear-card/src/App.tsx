@@ -25,7 +25,7 @@ import { Toggle } from "@/components/ui/toggle"
 
 import "./App.css"
 
-const API_BASE = import.meta.env.VITE_API_BASE || 
+const API_BASE = import.meta.env.VITE_API_BASE || ""
 
 type InputMode = "relation" | "image"
 
